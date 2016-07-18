@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- 下划线自动转驼峰式 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- mybatis 日志 -->
+        <!--<setting name="logImpl" value="SLF4J"/>-->
+    </settings>
+	<typeAliases>
+		<!-- 批量扫描别名 -->
+		<package name="com.chen.bean"/>
+	</typeAliases>
+</configuration>

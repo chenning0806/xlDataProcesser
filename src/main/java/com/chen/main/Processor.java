@@ -41,7 +41,7 @@ public class Processor {
                             .setDuplicateRemover(new BloomFilterDuplicateRemover(10000000)));
 
             spider.run();
-            System.out.println("continue..........");
+            System.out.println("continue..........!");
         }
 
 

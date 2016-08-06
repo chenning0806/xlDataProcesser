@@ -21,11 +21,11 @@ public class RedisTest {
     @Test
     public void main() throws InterruptedException {
         //序列化工具
-//        BoundHashOperations operations = redisTemplate.boundHashOps("rede:show");
-//        operations.put("1000110002","1");
+        BoundHashOperations operations = redisTemplate.boundHashOps("rede:show");
+        operations.put("1000110002","1");
 //        String s = (String) operations.get("321312312");
-        redisTemplate.delete("rede:show");
-        BoundHashOperations redisShowHash = redisTemplate.boundHashOps("rede:show");
+//        redisTemplate.delete("rede:show");
+//        BoundHashOperations redisShowHash = redisTemplate.boundHashOps("rede:show");
 //        redisShowHash.put("","");
 //        System.out.println(redisTemplate.hasKey("rede:show"));
 //        final RedisSerializer<String> serializer = redisTemplate.getStringSerializer();

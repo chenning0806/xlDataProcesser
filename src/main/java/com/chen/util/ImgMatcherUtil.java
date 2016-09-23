@@ -145,55 +145,55 @@ public class ImgMatcherUtil {
 
     public static void main(String[] args) throws Exception{
 
-//        String ss = ImgMatcherUtil.match(" \n" +
-//                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img2.cache.netease.com/edu/2015/3/17/20150317183043e3f3d_550.jpg\">\n" +
-//                " 您用手机可以通过网易新闻客户端查看网易教育频道最新内容，更多精彩文章期待与您分享。以下是手机端的订阅方式：\n" +
-//                " 1、安装网易新闻客户端\n" +
-//                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img1.cache.netease.com/edu/2015/3/17/2015031718360258625.jpg\">\n" +
-//                " 打开首页\n" +
-//                " 2、点击右上角下拉箭头，打开订阅页面。（红色手指图标处）\n" +
-//                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img4.cache.netease.com/edu/2015/3/17/2015031718372858816.jpg\">\n" +
-//                " 3、在“点击添加更多栏目”里，点击添加“教育”频道，即完成订阅。可进一步拖动，调整排序，点击“完成”。\n" +
-//                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img4.cache.netease.com/edu/2015/3/17/2015031718375293a63.jpg\">\n" +
-//                " 4、点击进入教育频道，查看最新资讯。\n" +
-//                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img4.cache.netease.com/edu/2015/3/17/2015031718394364e55.jpg\">\n" +
-//                " \n" +
-//                "   \n" +
-//                "  \n" +
-//                "    \n" +
-//                " \n" +
-//                " \n" +
-//                "  \n" +
-//                "  \n" +
-//                "  <img src=\"http://img1.cache.netease.com/cnews/css13/img/end_edu.png\" alt=\"范文艳\" width=\"13\" height=\"12\" class=\"icon\"> 本文来源：网易教育频道综合  \n" +
-//                "   \n" +
-//                "  责任编辑：马志秋_NQ2478 ");
-//        System.out.println(ss);
+        String ss = ImgMatcherUtil.match(" \n" +
+                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img2.cache.netease.com/edu/2015/3/17/20150317183043e3f3d_550.jpg\">\n" +
+                " 您用手机可以通过网易新闻客户端查看网易教育频道最新内容，更多精彩文章期待与您分享。以下是手机端的订阅方式：\n" +
+                " 1、安装网易新闻客户端\n" +
+                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img1.cache.netease.com/edu/2015/3/17/2015031718360258625.jpg\">\n" +
+                " 打开首页\n" +
+                " 2、点击右上角下拉箭头，打开订阅页面。（红色手指图标处）\n" +
+                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img4.cache.netease.com/edu/2015/3/17/2015031718372858816.jpg\">\n" +
+                " 3、在“点击添加更多栏目”里，点击添加“教育”频道，即完成订阅。可进一步拖动，调整排序，点击“完成”。\n" +
+                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img4.cache.netease.com/edu/2015/3/17/2015031718375293a63.jpg\">\n" +
+                " 4、点击进入教育频道，查看最新资讯。\n" +
+                " <img alt=\"网易新闻客户端教育频道上线 随时随地看教育\" src=\"http://img4.cache.netease.com/edu/2015/3/17/2015031718394364e55.jpg\">\n" +
+                " \n" +
+                "   \n" +
+                "  \n" +
+                "    \n" +
+                " \n" +
+                " \n" +
+                "  \n" +
+                "  \n" +
+                "  <img src=\"http://img1.cache.netease.com/cnews/css13/img/end_edu.png\" alt=\"范文艳\" width=\"13\" height=\"12\" class=\"icon\"> 本文来源：网易教育频道综合  \n" +
+                "   \n" +
+                "  责任编辑：马志秋_NQ2478 ");
+        System.out.println(ss);
 //        String s ="http://img2.cache.netease.com/edu/2015/3/17/20150317183043e3f3d_550.jpg";
 ////        String sss = s.substring(s.lastIndexOf("/")+1, s.lastIndexOf("."));
 ////        System.out.println(sss);
 //
 //        System.out.println(UUID.randomUUID()+s.substring(s.lastIndexOf(".")));
-        HttpClient httpClient = null;
-        File file = null;
-        HttpPost httppost = new HttpPost("http://ul.xueleyun.com/upload");
-            try {
-                httpClient = HttpClients.createDefault();
-                file = new File("6ea4b925-f29e-4671-904c-7196f5d0b193.jpg");
-                FileBody bin = new FileBody(file);
-                HttpEntity reqEntity = MultipartEntityBuilder.create().addPart("Filedata", bin).build();
-                httppost.setEntity(reqEntity);
-                HttpResponse response = httpClient.execute(httppost);
-                HttpEntity resEntity = response.getEntity();
-                ImgParam imgParam = JSONArray.parseObject(EntityUtils.toString(resEntity), ImgParam.class);
-                System.out.println(imgParam.toString());
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }finally {
-                httpClient.getConnectionManager().shutdown();
-                file.delete();
-            }
+//        HttpClient httpClient = null;
+//        File file = null;
+//        HttpPost httppost = new HttpPost("http://ul.xueleyun.com/upload");
+//            try {
+//                httpClient = HttpClients.createDefault();
+//                file = new File("6ea4b925-f29e-4671-904c-7196f5d0b193.jpg");
+//                FileBody bin = new FileBody(file);
+//                HttpEntity reqEntity = MultipartEntityBuilder.create().addPart("Filedata", bin).build();
+//                httppost.setEntity(reqEntity);
+//                HttpResponse response = httpClient.execute(httppost);
+//                HttpEntity resEntity = response.getEntity();
+//                ImgParam imgParam = JSONArray.parseObject(EntityUtils.toString(resEntity), ImgParam.class);
+//                System.out.println(imgParam.toString());
+//
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }finally {
+//                httpClient.getConnectionManager().shutdown();
+//                file.delete();
+//            }
     }
 
 }

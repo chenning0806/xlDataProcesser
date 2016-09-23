@@ -2,11 +2,11 @@ package com.chen.util;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.ContextConfiguration;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 
 /**
  * Created by ChenNing on 16/5/23.
@@ -20,10 +20,30 @@ public class RedisTest {
 
     @Test
     public void main() throws InterruptedException {
+        BigDecimal schoolMoney = new BigDecimal("-1111");
+        System.out.println(schoolMoney.compareTo(new BigDecimal("0")));
+//        redisTemplate.delete("rede:all:rule");
+//        BoundListOperations<String,String> boundValueOperations = redisTemplate.boundListOps("rede:all:rule");
+//        List<String> l =  boundValueOperations.range(0, boundValueOperations.size());
+//        System.out.println(l);
+
         //序列化工具
-        BoundHashOperations operations = redisTemplate.boundHashOps("rede:show");
-        operations.put("1000110002","1");
-//        String s = (String) operations.get("321312312");
+//        List<String> s = Arrays.asList("aaa");
+//        System.out.println(s);
+//        redisTemplate.delete("rede:init:time");
+//        BoundHashOperations operations = redisTemplate.boundHashOps("rede:show");
+//        List<String> list = new ArrayList<String>();
+//        list.add("a");
+//        list.add("b");
+//        System.out.println(list.toString());
+//        String s = JSON.toJSONString(list);
+//        System.out.println(s);
+//        operations.put("1000110002",s);
+//        String ss = (String) operations.get("1000110002");
+//        List<String> list1 = JSON.parseArray(ss, String.class);
+//        for (String s1 : list1) {
+//            System.out.println(s1);
+//        }
 //        redisTemplate.delete("rede:show");
 //        BoundHashOperations redisShowHash = redisTemplate.boundHashOps("rede:show");
 //        redisShowHash.put("","");
